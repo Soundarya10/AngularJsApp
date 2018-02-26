@@ -1,0 +1,20 @@
+<div class="row hrline PDB10 MGB10">
+	<a href="#profile" class="pull-left">
+		<img alt="image" class="img-circle icon" src="{{vm.photo.thumbnailUrl}}">
+	</a>
+	<div class="media-body ">
+		<strong class="name"><a href="users/{{vm.user.id}}">{{vm.user.name}}</a></strong><br/>
+		<small class="text-muted">{{vm.user.email}}</small><br/>
+	</div>
+	<h5 class="title postTitle">{{vm.post.title}}</h5>
+	<p class="body">{{vm.post.body}}</p>
+</div>
+<div class="" ng-repeat="comment in vm.postComments">
+	<div class="row PDB10">
+		<div class="media-body ">
+			<strong class="name">{{comment.name}}</strong><br/>
+			<small class="text-muted">{{comment.email}}</small><br/>
+		</div>
+		<p class="body">{{comment.body}}</p>
+	</div>
+</div>

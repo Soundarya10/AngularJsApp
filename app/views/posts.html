@@ -1,0 +1,22 @@
+
+<div class="row">
+	<!-- <div class="input-group col-xs-12">
+		<span class="input-group-addon" id="basic-addon3">Search Posts</span>
+		<input type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3" ng-model="postsSearch">
+	</div> -->
+	
+</div>
+
+<div ng-repeat="post in vm.posts | filter:postsSearch | orderBy:'title' ">
+	<div class="row hrline PDB10 MGB10">
+		<a href="/users/{{post.userId}}" class="pull-left">
+			<img alt="image" class="img-circle icon" src="{{vm.photos[post.userId - 1].thumbnailUrl}}">
+		</a>
+		<div class="media-body ">
+			<strong class="name"><a href="/users/{{post.userId}}">{{vm.users[post.userId - 1].name}}</a></strong><br/>
+			<small class="text-muted">{{vm.users[post.userId - 1].email}}</small><br/>
+		</div>
+		<h5 class="title"><a href="/posts/{{post.id}}" class="postTitle">{{post.title}}</a></h5>
+		<p class="body">{{post.body}}</p>
+	</div>
+</div>

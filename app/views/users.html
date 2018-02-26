@@ -1,0 +1,17 @@
+<div class="row">
+	<!-- <div class="input-group col-xs-12">
+		<span class="input-group-addon" id="basic-addon3">Search Users</span>
+		<input type="text" class="form-control" id="basic-url1" aria-describedby="basic-addon3" ng-model="usersSearch">
+	</div> -->
+</div>
+<div ng-repeat="user in vm.users  | filter:usersSearch | orderBy:'name' ">
+	<div class="row PDB10 MGB10">
+		<a href="users/{{user.id}}" class="pull-left">
+			<img alt="image" class="img-circle icon" src="{{vm.photos[user.id - 1].thumbnailUrl}}">
+		</a>
+		<div class="media-body ">
+			<strong class="name"><a href="users/{{user.id}}">{{user.name}}</a></strong><br/>
+			<small class="text-muted">{{user.email}}</small><br/>
+		</div>
+	</div>
+</div>
