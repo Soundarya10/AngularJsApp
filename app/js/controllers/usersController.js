@@ -9,33 +9,6 @@
 
 	function usersController(usersService, photosService) {
 		var vm = this;
-
-		vm.photos = '';
-		vm.photosPromise = photosPromise;
-		vm.users = '';
-		vm.usersPromise = usersPromise;
-
-		activate();
-
-		function activate() {
-			vm.usersPromise();
-			vm.photosPromise();
-		}
-		function usersPromise() {
-			usersService.usersCall()
-				.then(function (data) {
-					vm.users = data;
-				}, function (error) {
-					vm.users = [];
-				})
-		};
-		function photosPromise() {
-			photosService.photosCall()
-				.then(function (data) {
-					vm.photos = data;
-				}, function (error) {
-					vm.photos = [];
-				})
-		};
+		//The functionality part here has been moved inside the users directive
 	}
 })();
